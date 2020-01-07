@@ -1,0 +1,200 @@
+@charset 'utf-8';
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+body {
+    height: 100vh;
+    // text-align: center;
+}
+
+.dice_set {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 50%;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    li {
+        position: relative;
+        width: 200px;
+        height: 150px;
+        // margin-bottom: 120px;
+
+        // transform-style: preserve-3d;
+        .shadow {
+            position: absolute;
+            // left: 10px;
+            // top: 10px;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            filter: blur(15px);
+            z-index: 1;
+            // 
+
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: all 5s;
+        }
+
+        .dice {
+
+
+            width: 80px;
+            height: 80px;
+            position: absolute;
+            // transform: rotateX(30deg) rotateY(30deg);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transform-style: preserve-3d;
+            // animation: throwDice 2s;
+            animation-timing-function: cubic-bezier(.46, -0.14, 1, .58);
+            animation-fill-mode: forwards;
+            perspective: 3000;
+            -webkit-perspective: 3000;
+            // animation-duration: 2s;
+            z-index: 2;
+            // transition:all 5s;
+
+
+            .facet {
+                width: 100%;
+                height: 100%;
+                // border: 1px solid black;
+                padding: 5px;
+                box-sizing: border-box;
+                position: absolute;
+                display: flex;
+                // background-color: #fff;
+
+
+
+                .row {
+                    width: 100%;
+                    display: flex;
+
+                }
+
+                span {
+                    display: block;
+                    width: 20px;
+                    height: 20px;
+                    border-radius: 50%;
+                    background-color: white;
+                    // box-shadow: black 2px 2px 3px;
+                }
+
+            }
+
+            .front {
+                justify-content: space-around;
+                align-items: center;
+                transform: translateZ(40px);
+                background-color: rgb(30, 190, 190);
+
+            }
+
+            .right {
+                justify-content: space-around;
+                align-items: center;
+                transform: rotateY(90deg) translateZ(40px);
+                background-color: rgb(185, 13, 148);
+            }
+
+            .back {
+                justify-content: space-around;
+                align-items: center;
+                transform: rotateY(180deg) translateZ(40px);
+                background-color: rgb(168, 214, 3);
+
+                span:nth-of-type(1) {
+                    align-self: flex-start;
+                }
+
+                span:nth-of-type(3) {
+                    align-self: flex-end;
+                }
+
+            }
+
+            .left {
+                flex-wrap: wrap;
+                align-content: space-between;
+                transform: rotateY(-90deg) translateZ(40px);
+                background-color: rgb(255, 102, 0);
+
+                .row {
+                    justify-content: space-between;
+                    align-items: center;
+                }
+            }
+
+            .top {
+                flex-wrap: wrap;
+                align-content: space-between;
+                transform: rotateX(90deg) translateZ(40px);
+                background-color: rgb(31, 43, 209);
+
+                .row {
+                    justify-content: space-between;
+                    align-items: center;
+
+                    &:nth-last-of-type(2) {
+                        justify-content: center;
+                    }
+                }
+            }
+
+            .bottom {
+                flex-wrap: wrap;
+                align-content: space-between;
+                transform: rotateX(-90deg) translateZ(40px);
+                background-color: rgb(245, 1, 1);
+
+                .row {
+                    justify-content: space-around;
+                    align-items: center;
+
+                }
+            }
+        }
+    }
+
+}
+
+.btn {
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 30px;
+    border: 1px solid red;
+    background-color: red;
+    color: white;
+    outline: none;
+
+    &:hover {
+        background-color: white;
+        color: red;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .dice_set {
+        width: 100%;
+
+        li {
+            width: 100px;
+        }
+    }
+}
