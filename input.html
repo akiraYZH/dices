@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" maxlength="50">
+    <p><span></span>/50</p>
+    <script>
+        var oInput = document.querySelector('input');
+        var oSpan = document.querySelector('span');
+        oInput.addEventListener('input', function(e){
+            // e.preventDefault;
+            oSpan.innerHTML = oInput.value.length;
+        });
+    </script>
+</body>
+</html>
