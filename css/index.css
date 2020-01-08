@@ -40,8 +40,6 @@ body {
       transform-style: preserve-3d;
       animation-timing-function: cubic-bezier(0.46, -0.14, 1, 0.58);
       animation-fill-mode: forwards;
-      perspective: 3000;
-      -webkit-perspective: 3000;
       z-index: 2; }
       .dice_set li .dice .facet {
         width: 100%;
