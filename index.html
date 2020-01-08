@@ -163,12 +163,17 @@
 <script>
     let oBtn = document.querySelector('.btn');
     let oDiceUl = document.querySelector('.dice_set');
-    let aRdm = [];
-    // aRdm=[6,6,6,6,6,6];
+    let _aRdm = [];
+    // _aRdm=[6,6,6,6,6,6];
     
     oBtn.addEventListener('click', () => {
+        if(_aRdm.length==0){
+            var aRdm=[]
+        }else{
+            aRdm = [..._aRdm];
+        }
         
-        aRdm.length = 0;
+        // aRdm.length = 0;
 
         
         while (aRdm.length != 6) {
@@ -207,9 +212,7 @@
 
     });
 
-    // function getXYZ() {
-    //     return Math.random().toFixed(1) * 2 - 1;
-    // }
+
 
     function getDegree(num) {
         switch (num) {
